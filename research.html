@@ -12,14 +12,13 @@
             margin: 0; 
             padding: 0; 
             background: white;
-            /* background-color: #f4f4f4; */
             color: #333; 
         } 
 
         html, body {
+            margin: 0;
+            padding: 0;
             height: 100%;
-            display: flex;
-            flex-direction: column;
         }
 
         header {
@@ -30,7 +29,7 @@
             font-size: 34px;
             font-weight: bold;
             height: 250px;
-            min-height: 250px;
+            min-height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -43,6 +42,7 @@
             background-color: rgb(177, 177, 177);
             height: 60px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow-x: auto; /* Allow horizontal scrolling on very small screens */
         }
 
         nav ul {
@@ -55,7 +55,6 @@
 
         nav ul li {
             height: 100%;
-            /*margin: 0 20px;*/
         }
 
         nav ul li a {
@@ -67,92 +66,85 @@
             display: flex;
             align-items: center;
             height: 100%;
-            /*border-radius: 5px;*/
             transition: background 0.1s ease-in-out;
+            white-space: nowrap;
         }
 
         nav ul li a:hover {
-            background-color: whitesmoke; /* soft gold hover effect*/
+            background-color: whitesmoke;
             color: rgb(7, 126, 150);
-            /*border-radius: 5px;*/
         }
 
         main { 
-            padding: 40px; 
+            padding: 20px; 
             text-align: center;
             flex: 1;
         }  
         
         .research-overview {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         .research-overview-image {
-            width: auto;
-            max-width: 1000px;
+            width: 100%;
+            max-width: 900px;
             height: auto;
             border-radius: 10px;
             box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .research-overview p {
-            font-size: 20px;
+            font-size: 18px;
             line-height: 1.6;
             max-width: 900px;
             margin: 15px auto;
             text-align: center;
+            padding: 0 15px;
         }
-        /* Size and style of research illustration*/
+
         .research-section {
             display: flex;
-            align-items: flex-start;
-            gap: 20px;
+            flex-direction: column;
             max-width: 1000px;
             margin: 40px auto;
-            margin-bottom: 100px;
-            /*text-align: justify;*/
+            margin-bottom: 60px;
         }
 
-        /* Style for research images */
         .research-image {
-            width: 50%; /* Adjust width as needed */
+            width: 80%;
+            max-width: 500px;
             height: auto;
-            object-fit: contain;
-            object-position: center;
-            border-radius: 10px; /* Optional rounded corners */
-            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Adds depth */
-            flex-shrink: 0;/*prevent images from shrinking*/
-            background-color: #fff;
-
-            float: left;       /* 👈 This is the key */
-            margin-right: 20px;
-            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+            margin: 0 auto 20px;
+            display: block;
         }
 
         .research-text {
             flex: 1;
         }
 
-        /*Research section paragraph*/
+        .research-text h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
         .research-section p {
             font-size: 18px;
             line-height: 1.6;
             margin-top: 15px;
-            width: 100%;
-        }
-        /* Adjust spacing for better readability */
-        section {
-            /*text-align: center;*/
-            margin-bottom: 50px; /* Space between sections */
+            text-align: left;
         }
 
-        /* Style for paragraphs in Section 1 and Section 2 */
+        section {
+            margin-bottom: 40px;
+        }
+
         section p {
-            font-size: 20px; /* Increase font size */
-            text-align: left; /* Center the text */
+            font-size: 18px;
             line-height: 1.6;
-            margin-bottom: 60px; /* Increase distance between the two paragraphs*/
+            margin-bottom: 20px;
         }
 
         /*Footer-wrapper*/
@@ -160,14 +152,17 @@
             position: relative;
             margin-top: 50px;
         }
+        
         /*Logo section*/
         .logo-section {
             position: absolute;
-            bottom: 50px; /*adjust to change the clearance*/
+            bottom: 50px;
             left: 50%;
-            transform: translateX(-50%); /*center the logos*/
+            transform: translateX(-50%);
             background: white;
             padding: 10px 20px;
+            width: 80%;
+            max-width: 500px;
         }
 
         /*Logo container*/
@@ -175,7 +170,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 50px;
+            gap: 30px;
+            flex-wrap: wrap;
         }
 
         /*Logo container img*/
@@ -196,32 +192,123 @@
             font-size: 14px;
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
+        /* Float for large screens */
+        @media (min-width: 769px) {
             .research-section {
-                flex-direction: column;
-                align-items: center; /* Larger images for smaller screens */
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 20px;
             }
+            
             .research-image {
-                width: 100%;
+                float: left;
+                margin-right: 20px;
+                margin-bottom: 20px;
+                width: 50%;
             }
-            .logo-section {
-                bottom: 50px;
-                padding: 8px 15px;
+            
+            .research-text {
+                overflow: hidden;
             }
-            .logo-container img {
-                width: 25px;
-                height: 25px;
+            
+            .research-text h1 {
+                text-align: left;
             }
-}
+        }
 
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            header {
+                height: 200px;
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .research-overview p {
+                font-size: 16px;
+            }
+            
+            .research-section p {
+                font-size: 16px;
+            }
+            
+            .logo-section {
+                width: 90%;
+                padding: 8px 10px;
+            }
+            
+            .logo-container {
+                gap: 20px;
+            }
+            
+            .logo-container img {
+                width: 28px;
+                height: 28px;
+            }
+            
+            header {
+                font-size: 28px;
+                height: 180px;
+            }
+            
+            nav ul li a {
+                padding: 0 12px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            main {
+                padding: 15px 10px;
+            }
+            
+            .research-overview p {
+                font-size: 14px;
+            }
+            
+            .research-section p {
+                font-size: 14px;
+            }
+            
+            .logo-container {
+                gap: 15px;
+            }
+            
+            .logo-container img {
+                width: 24px;
+                height: 24px;
+            }
+            
+            header {
+                font-size: 24px;
+                height: 150px;
+            }
+            
+            nav {
+                height: 50px;
+            }
+            
+            nav ul li a {
+                padding: 0 10px;
+                font-size: 14px;
+            }
+            
+            footer {
+                height: 40px;
+                font-size: 12px;
+            }
+            
+            .research-text h1 {
+                font-size: 22px;
+            }
+        }
     </style> 
 </head> 
 <body> 
 
     <header> 
         <h1>Research Progress</h1> 
-        <p></p> 
     </header> 
 
     <nav> 
@@ -246,16 +333,15 @@
                 make advantage of machine learning algorithms to advance research on relationship of chain 
                 entanglements and mechanical properties under different conditions. Generally, I will be 
                 committed to applications of polymer materials and macromolecule-based composites in additive
-                 manufacturing, energy transportation, biomechanical systems and even new material discovery.
+                manufacturing, energy transportation, biomechanical systems and even new material discovery.
             </p>
         </section>
 
         <section class="research-section">
-            
             <div class="research-text">
                 <h1>Polymer Model Generation</h1>
+                <img src="research/progress.svg" alt="Research Progress 1 Image" class="research-image">
                 <p>
-                    <img src="research/progress.svg" alt="Research Progress 1 Image" class="research-image">
                 The workflow of polymer models, I would use established toolkits like CHARMM-GUI and Pysimm to build
                 all-atom models, and deploy Moltemplate to construct coarse-grained models. Specifically for united 
                 atomic models, I have developed python scripts to directly generate LAMMPS data file of polyethylene. 
@@ -286,4 +372,3 @@
     </div>
 </body> 
 </html>
-
