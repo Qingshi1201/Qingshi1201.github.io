@@ -16,9 +16,9 @@
         } 
 
         html, body {
+            margin: 0;
+            padding: 0;
             height: 100%;
-            display: flex;
-            flex-direction: column;
         }
 
         header {
@@ -30,7 +30,7 @@
             font-size: 34px;
             font-weight: bold;
             height: 250px;
-            min-height: 250px;
+            min-height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -41,9 +41,9 @@
             display: flex;
             justify-content: center;
             background-color: rgb(177, 177, 177);
-            /*padding: 15px 0;*/
             height: 60px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow-x: auto; /* Allow horizontal scrolling on very small screens */
         }
 
         nav ul {
@@ -56,7 +56,6 @@
 
         nav ul li {
             height: 100%;
-            /*margin: 0 20px;*/
         }
 
         nav ul li a {
@@ -68,61 +67,54 @@
             display: flex;
             align-items: center;
             height: 100%;
-            /*border-radius: 5px;*/
             transition: background 0.1s ease-in-out;
+            white-space: nowrap;
         }
 
         nav ul li a:hover {
-            background-color: whitesmoke; /* soft gold hover effect*/
+            background-color: whitesmoke;
             color: rgb(7, 126, 150);
-            /*border-radius: 5px;*/
         }
 
         main { 
-            padding: 40px; 
+            padding: 20px; 
             text-align: center;
             flex: 1;
-        }         
+        } 
 
-        /* Style for paragraphs in Section 1 and Section 2 */
-        section p {
-            font-size: 20px; /* Increase font size */
-            text-align: center; /* Center the text */
-            line-height: 1.6;
-            margin-bottom: 60px; /* Increase distance between the two paragraphs*/
-        }
-
-        .gallery-topic {
-            margin-bottom: 60px;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .gallery-topic h2 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: #555;
-            text-align: center;
-        }
-
-        .photo-grid {
+        /*grid container for courses*/
+        .course-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 0 20px;
-            justify-content: center;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .photo-grid img {
+        /*course image style*/
+        .course-item img {
             width: 100%;
+            max-width: 250px;
             height: auto;
+            object-fit: cover;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            margin-bottom: 15px;
         }
 
-        .photo-grid img:hover {
-            transform: scale(1.05);
+        /*course title*/
+        .course-item h3 {
+            font-size: 22px;
+            margin: 10px 0;
+            color: #2e5652;
+        }
+
+        /*course description*/
+        .course-item p {
+            font-size: 16px;
+            color: #555;
+            text-align: left;
+            line-height: 1.5;
         }
 
         /*Footer-wrapper*/
@@ -130,14 +122,17 @@
             position: relative;
             margin-top: 50px;
         }
+        
         /*Logo section*/
         .logo-section {
             position: absolute;
-            bottom: 50px; /*adjust to change the clearance*/
+            bottom: 50px;
             left: 50%;
-            transform: translateX(-50%); /*center the logos*/
+            transform: translateX(-50%);
             background: white;
             padding: 10px 20px;
+            width: 80%;
+            max-width: 500px;
         }
 
         /*Logo container*/
@@ -145,7 +140,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 50px;
+            gap: 30px;
+            flex-wrap: wrap;
         }
 
         /*Logo container img*/
@@ -167,19 +163,107 @@
         } 
 
         /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .course-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 25px;
+            }
+            
+            header {
+                height: 200px;
+                font-size: 30px;
+            }
+        }
+
         @media (max-width: 768px) {
+            .course-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 20px;
+                padding: 15px;
+            }
+            
+            .course-item h3 {
+                font-size: 20px;
+            }
+            
+            .course-item p {
+                font-size: 14px;
+            }
+            
             .logo-section {
-                bottom: 50px;
-                padding: 8px 15px;
+                width: 90%;
+                padding: 8px 10px;
             }
+            
+            .logo-container {
+                gap: 20px;
+            }
+            
             .logo-container img {
-                width: 25px;
-                height: 25px;
+                width: 28px;
+                height: 28px;
             }
-} 
+            
+            header {
+                font-size: 28px;
+                height: 180px;
+            }
+            
+            nav ul li a {
+                padding: 0 12px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .course-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 10px;
+            }
+            
+            main {
+                padding: 15px 10px;
+            }
+            
+            .course-item {
+                padding: 15px;
+            }
+            
+            .course-item h3 {
+                font-size: 18px;
+            }
+            
+            .logo-container {
+                gap: 15px;
+            }
+            
+            .logo-container img {
+                width: 24px;
+                height: 24px;
+            }
+            
+            header {
+                font-size: 24px;
+                height: 150px;
+            }
+            
+            nav {
+                height: 50px;
+            }
+            
+            nav ul li a {
+                padding: 0 10px;
+                font-size: 14px;
+            }
+            
+            footer {
+                height: 40px;
+                font-size: 12px;
+            }
+        }
     </style> 
 </head> 
-
 <body> 
 
     <header> 
@@ -198,39 +282,31 @@
     </nav>
 
     <main> 
-        <main>
-            <section class="gallery-topic">
-                <h2>Interesting Research</h2>
-                <div class="photo-grid">
-                    <img src="./photo/gallery/research/research3.jpg" alt="research 3">
-                    <img src="./photo/gallery/research/research5.png" alt="research 5">
-                    <img src="./photo/gallery/research/research1.png" alt="research 1">
-                    <img src="./photo/gallery/research/research2.png" alt="research 2">
-                </div>
-            </section>
-        
-            <section class="gallery-topic">
-                <h2>Home Food</h2>
-                <div class="photo-grid">
-                    <img src="./photo/gallery/food/food1.jpg" alt="food 1">
-                    <img src="./photo/gallery/food/food2.jpg" alt="food 2">
-                    <img src="./photo/gallery/food/food3.jpg" alt="food 3">
-                    <img src="./photo/gallery/food/food4.jpg" alt="food 4">
-                    <img src="./photo/gallery/food/food5.jpg" alt="food 5">
-                </div>
-            </section>
-        
-            <section class="gallery-topic">
-                <h2>Tomato Seedlings</h2>
-                <div class="photo-grid">
-                    <img src="./photo/gallery/planting/tomato1.jpg" alt="planting 1">
-                    <img src="./photo/gallery/planting/tomato2.jpg" alt="planting 2">
-                    <img src="./photo/gallery/planting/tomato3.jpg" alt="planting 3">
-                    <img src="./photo/gallery/planting/tomato4.jpg" alt="planting 4">
-                </div>
-            </section>
-        </main>
-        
+        <h2>Interesting Research</h2>
+        <section class="course-grid">
+            <div class="course-item"><img src="./photo/gallery/research/research5.png" alt="research 5"></div>
+            <div class="course-item"><img src="./photo/gallery/research/research4.png" alt="research 4"></div>
+            <div class="course-item"><img src="./photo/gallery/research/research3.jpg" alt="research 3"></div>
+            <div class="course-item"><img src="./photo/gallery/research/research2.png" alt="research 2"></div>
+            <div class="course-item"><img src="./photo/gallery/research/research1.png" alt="research 1"></div>
+        </section>
+
+        <h2>Home Food</h2>
+        <section class="course-grid">
+            <div class="course-item"><img src="./photo/gallery/food/food1.jpg"></div>
+            <div class="course-item"><img src="./photo/gallery/food/food2.jpg"></div>
+            <div class="course-item"><img src="./photo/gallery/food/food3.jpg"></div>
+            <div class="course-item"><img src="./photo/gallery/food/food4.jpg"></div>
+            <div class="course-item"><img src="./photo/gallery/food/food5.jpg"></div>
+        </section>
+
+        <h2>Tomato Seedlings</h2>
+        <section class="course-grid">
+            <div class="course-item"><img src="./photo/gallery/planting/tomato1.jpg"></div>
+            <div class="course-item"><img src="./photo/gallery/planting/tomato2.jpg"></div>
+            <div class="course-item"><img src="./photo/gallery/planting/tomato3.jpg"></div>
+            <div class="course-item"><img src="./photo/gallery/planting/tomato4.jpg"></div>
+        </section>
     </main> 
 
     <div class="footer-wrapper">
@@ -251,4 +327,6 @@
     </div>
 </body> 
 </html>
+
+
 
