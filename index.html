@@ -1,0 +1,245 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <link rel="icon" type="image/png" href="./logo/logo.png">
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Home</title>
+    <style> 
+        /* General Styles */
+        body { 
+            font-family: "Times New Roman", Times, serif; 
+            margin: 0; 
+            padding: 0; 
+            background: white;
+            color: #333; 
+        } 
+
+        html, body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        /*Header style*/
+        header {
+            background: url('./header/home_final.jpg') no-repeat center center; 
+            background-size: cover; 
+            color: white;
+            background-position: center;
+            text-align: center; 
+            font-size: 34px;
+            font-weight: bold;
+            height: 250px;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } 
+
+        /* Navigation Menu */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgb(177, 177, 177);
+            /*padding: 15px 0;*/
+            height: 60px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            height: 100%;
+        }
+
+        nav ul li {
+            height: 100%;
+            /*margin: 0 20px;*/
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 0 18px;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            /*border-radius: 5px;*/
+            transition: background 0.1s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            background-color: whitesmoke; /* soft gold hover effect*/
+            color: rgb(7, 126, 150);
+            /*border-radius: 5px;*/
+        }
+
+        /*Body style*/
+        main { 
+            padding: 40px; 
+            text-align: center;
+            flex: 1;
+        }   
+
+        /* Container for portrait and text */
+        .content-container {
+            display: flex;
+            align-items: center; /* Align items vertically */
+            justify-content: center; /* Center content horizontally */
+            gap: 40px; /* Space between portrait and text */
+            max-width: 80%;
+            margin: auto;
+        }
+
+        /* Style for the portrait */
+        .portrait img {
+            width: 400px; /* Adjust size as needed */
+            height: 500px;
+            border-radius: 10px; /* Optional: adds rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+        }
+
+        /* Style for the text content */
+        .text-content {
+            max-width: 600px;
+            text-align: left; /* Align text to the left */
+        }
+
+        /* Adjust spacing for better readability */
+        section {
+            /*text-align: center;*/
+            margin-bottom: 50px; /* Space between sections */
+        }
+
+        /* Style for paragraphs in Section 1 and Section 2 */
+        section p {
+            font-size: 20px; /* Increase font size */
+            text-align: left; /* Center the text */
+            line-height: 1.6;
+            margin-bottom: 60px; /* Increase distance between the two paragraphs*/
+        }
+
+        /*Footer-wrapper*/
+        .footer-wrapper {
+            position: relative;
+            margin-top: 50px;
+        }
+        /*Logo section*/
+        .logo-section {
+            position: absolute;
+            bottom: 50px; /*adjust to change the clearance*/
+            left: 50%;
+            transform: translateX(-50%); /*center the logos*/
+            background: white;
+            padding: 10px 20px;
+        }
+
+        /*Logo container*/
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        /*Logo container img*/
+        .logo-container img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+        }
+
+        /*Footer style*/
+        footer { 
+            background-color: rgb(177, 177, 177); 
+            color: white; 
+            height: 50px;
+            display: flex;
+            align-items: center; 
+            justify-content: center;
+            font-size: 14px;
+        } 
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .content-container {
+                flex-direction: column;
+                align-items: center; /* Larger images for smaller screens */
+            }
+            .portrait-image {
+                width: 150px;
+            }
+            .logo-section {
+                bottom: 50px;
+                padding: 8px 15px;
+            }
+            .logo-container img {
+                width: 25px;
+                height: 25px;
+            }
+}
+    </style> 
+</head> 
+
+<body> 
+
+    <header> 
+        <h1>Qingshi Wang</h1> 
+        <p></p> 
+    </header> 
+
+    <nav> 
+        <ul> 
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./research.html">Research</a></li> 
+            <li><a href="./courses.html">Courses</a></li> 
+            <li><a href="./cv.html">CV</a></li>
+            <li><a href="./gallery.html">Gallery</a></li>
+        </ul> 
+    </nav>
+
+    <main> 
+        <section class="content-container">
+            <div class="portrait">
+                <img src="./photo/home2.jpg" alt="myphoto.jpg">
+            </div>
+            <div class="text-content">
+                <p></p>
+                <p>Hi, I am Qinghsi Wang! Initially from Inner Mongolia, China, I have been studying in 
+                    the US since 2024 as a master student in Materials Science and Engineering at Cornell University. 
+                    I am currently working with Professor <a href="https://jingjieyeo.github.io" style="color: cornflowerblue;">Jingjie Yeo</a> for Molecular Dynamics simulation of synthetic and 
+                    natural polymers. I am actively seeking Ph.D. positions in 2026 Fall.</p>
+
+                <p>My recent research focuses on molecular simulation on mechanical properties 
+                    of soft materials influenced by chain entanglement.
+                    To achieve the target, I have managed to build polymer models at different levels of approximations 
+                    and run simulations primarily in LAMMPS. My long-term goal is to combine molecular simulaitons with 
+                    machine learning methods to predict properties of polymer materials and discover new performance of polymers.
+                </p>
+            </div> 
+        </section>   
+    </main> 
+
+    <div class="footer-wrapper">
+        <div class="logo-section">
+            <div class="logo-container">
+                <a href="mailto:qw293@cornell.edu"><img src="./logo/email_new.svg" alt="email"></a>
+                <a href="https://github.com/Qingshi1201"><img src="./logo/github.svg" alt="github"></a>
+                <a href="https://www.linkedin.com/in/qingshi-wang-854a92323/"><img src="./logo/linkedin.svg" alt="linkedin"></a>
+                <a href="https://orcid.org/0009-0007-5974-1566"><img src="./logo/orcid.svg" alt="orcid"></a>
+                <a href="https://wa.me/16072793247"><img src="./logo/whatsapp.svg" alt="whatsapp"></a>
+                <a href="./contact/wechat.jpg"><img src="./logo/wechat.svg" alt="wechat"></a>
+            </div>
+        </div>
+    
+        <footer> 
+            <p>&copy; All rights reserved by Qingshi Wang.</p> 
+        </footer>
+    </div>
+</body> 
+</html>
+
