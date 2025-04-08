@@ -1,0 +1,281 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <link rel="icon" type="image/png" href="./logo/logo.png">
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Courses</title> 
+    <style> 
+        /* General Styles */
+        body { 
+            font-family: "Times New Roman", Times, serif; 
+            margin: 0; 
+            padding: 0; 
+            background: white;
+            color: #333; 
+        } 
+
+        html, body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: url('./header/course_final.jpg') no-repeat center center; 
+            background-size: cover; 
+            color: white;
+            background-position: center;
+            text-align: center; 
+            font-size: 34px;
+            font-weight: bold;
+            height: 250px;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } 
+
+        /* Navigation Menu */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgb(177, 177, 177);
+            /*padding: 15px 0;*/
+            height: 60px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            height: 100%;
+        }
+
+        nav ul li {
+            height: 100%;
+            /*margin: 0 20px;*/
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 0 18px;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            /*border-radius: 5px;*/
+            transition: background 0.1s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            background-color: whitesmoke; /* soft gold hover effect*/
+            color: rgb(7, 126, 150);
+            /*border-radius: 5px;*/
+        }
+
+        main { 
+            padding: 40px; 
+            text-align: center;
+            flex: 1;
+        } 
+
+        /*grid container for courses*/
+        .course-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /*individual course items*/
+        .course-item {
+            width: 30%;
+            text-align: center;
+        }
+
+        /*course image style*/
+        .course-item img {
+            width: 100%;
+            height: auto;
+            object-fit: contain; /*fixed height*/
+            border-radius: 10px;
+        }
+
+        /*course title*/
+        .course-item h3 {
+            font-size: 22px;
+            margin: 10px 0;
+            color: #2e5652;
+        }
+
+        /*course description*/
+        .course-item p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        /*Footer-wrapper*/
+        .footer-wrapper {
+            position: relative;
+            margin-top: 50px;
+        }
+        /*Logo section*/
+        .logo-section {
+            position: absolute;
+            bottom: 50px; /*adjust to change the clearance*/
+            left: 50%;
+            transform: translateX(-50%); /*center the logos*/
+            background: white;
+            padding: 10px 20px;
+        }
+
+        /*Logo container*/
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        /*Logo container img*/
+        .logo-container img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+        }
+
+        /*Footer style*/
+        footer { 
+            background-color: rgb(177, 177, 177); 
+            color: white; 
+            height: 50px;
+            display: flex;
+            align-items: center; 
+            justify-content: center;
+            font-size: 14px;
+        } 
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .logo-section {
+                bottom: 50px;
+                padding: 8px 15px;
+            }
+            .logo-container img {
+                width: 25px;
+                height: 25px;
+            }
+}
+
+    </style> 
+</head> 
+<body> 
+
+    <header> 
+        <h1>Courses</h1> 
+        <p></p> 
+    </header> 
+
+    <nav> 
+        <ul> 
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./research.html">Research</a></li> 
+            <li><a href="./courses.html">Courses</a></li> 
+            <li><a href="./cv.html">CV</a></li>
+            <li><a href="./gallery.html">Gallery</a></li>
+        </ul> 
+    </nav>
+
+    <main> 
+        <section class="course-grid">
+            <div class="course-item">
+                <img src="./course/principle_md.jpg" alt="course 1">
+                <h3>Principles of Molecular Simulation</h3>
+                <p>
+                    In this course, I systematically learned origin, development and future opportunities of 
+                    molecular simulation methodologies. During the lecutres, I was really interested in computation 
+                    of atomic orbits with <span style="font-weight: bold;">PySCF</span>. With optimized parameters, I could prepare for dynamics simulations 
+                    at larger scale in <span style="font-weight: bold;">LAMMPS</span>.
+                </p>
+            </div>
+        
+            <div class="course-item">
+                <img src="./course/compu_mechanics.jpg" alt="course 2">
+                <h3>Multiscale Computational Mechanics</h3>
+                <p>
+                    In the computational mechanics, I learned continuously to integrate quantum and molecular simulations. 
+                    The most indispensable idea I captured is to understand and build up <span style="font-weight: bold;">whole workflow from model building,
+                    through running simulators, and finally to data visualization by programming or applications</span>.
+                </p>
+            </div>
+
+            <div class="course-item">
+                <img src="./course/polymer_properties.jpg" alt="course 3">
+                <h3>Properties of Solid Polymers</h3>
+                <p>
+                    In Properties of Solid Polymers, I learned basic polymer chemistry and physics knowledge including main 
+                    categories of <span style="font-weight: bold;">polymerization</span> and status of solid polymers. By taking the course, I understood that why 
+                    <span style="font-weight: bold;">viscoelasticity
+                     of polymers stem from monomer compositions and chain conformations</span>.
+                </p>
+            </div>
+
+            <div class="course-item">
+                <img src="./course/polymer_mechanics.jpg" alt="course 4">
+                <h3>Polymer Mechanics</h3>
+                <p>
+                    Polymer mechanics is one of most important courses I have taken, where I learned and practiced how to 
+                    <span style="font-weight: bold;">theoretically
+                    characterize mechanical properties of polymers by modeling and solving Newtonian Equations</span>. 
+                    I also understood why different degrees of approximation and modeling are necessary.
+                </p>
+            </div>
+
+            <div class="course-item">
+                <img src="./course/tissue_eng.jpg" alt="course 5">
+                <h3>Tissue Engineering</h3>
+                <p>
+                    In lectures of Tissue Engineering, I learned main types of <span style="font-weight: bold;">biomacromolecules in human body</span> and 
+                    how they interact with each other, leading to bioactivity of cells, tissues and organs. I also learned 
+                    how to <span style="font-weight: bold;">design synthetic polymer materials for tissue therapy and regeneration</span>, 
+                    which is an interdisplinary application.
+                </p>
+            </div>
+
+            <div class="course-item">
+                <img src="./course/data_structure.jpg" alt="course 6">
+                <h3>Data Structure</h3>
+                <p>
+                    Data structures is a technique to implement the physical forms of abstract data types. In this course, I learned 
+                    how modern computer <span style="font-weight: bold;">tackle with large data, extract information and manipulate big data</span>. The course laid a foundation
+                    for me to step to <span style="font-weight: bold;">data-driven technology for materials science</span> in the future.
+                </p>
+            </div>
+        </section>
+    </main> 
+
+    <div class="footer-wrapper">
+        <div class="logo-section">
+            <div class="logo-container">
+                <a href="mailto:qw293@cornell.edu"><img src="./logo/email_new.svg" alt="email"></a>
+                <a href="https://github.com/Qingshi1201"><img src="./logo/github.svg" alt="github"></a>
+                <a href="https://www.linkedin.com/in/qingshi-wang-854a92323/"><img src="./logo/linkedin.svg" alt="linkedin"></a>
+                <a href="https://orcid.org/0009-0007-5974-1566"><img src="./logo/orcid.svg" alt="orcid"></a>
+                <a href="https://wa.me/16072793247"><img src="./logo/whatsapp.svg" alt="whatsapp"></a>
+                <a href="./contact/wechat.jpg"><img src="./logo/wechat.svg" alt="wechat"></a>
+            </div>
+        </div>
+    
+        <footer> 
+            <p>&copy; All rights reserved by Qingshi Wang.</p> 
+        </footer>
+    </div>
+</body> 
+</html>
+
