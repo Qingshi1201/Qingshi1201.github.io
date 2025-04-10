@@ -76,10 +76,16 @@
             color: rgb(7, 126, 150);
         }
 
+        .page-wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
         /*Body style*/
         main { 
-            padding: 20px; 
-            text-align: center;
+            /*padding: 20px; 
+            text-align: center;*/
             flex: 1;
         }   
 
@@ -253,58 +259,59 @@
 </head> 
 
 <body> 
+    <div class="page-wrapper">
+        <header> 
+            <h1>Qingshi Wang</h1> 
+        </header> 
 
-    <header> 
-        <h1>Qingshi Wang</h1> 
-    </header> 
+        <nav> 
+            <ul> 
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./research.html">Research</a></li> 
+                <li><a href="./courses.html">Courses</a></li> 
+                <li><a href="./cv.html">CV</a></li>
+                <li><a href="./gallery.html">Gallery</a></li>
+            </ul> 
+        </nav>
 
-    <nav> 
-        <ul> 
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./research.html">Research</a></li> 
-            <li><a href="./courses.html">Courses</a></li> 
-            <li><a href="./cv.html">CV</a></li>
-            <li><a href="./gallery.html">Gallery</a></li>
-        </ul> 
-    </nav>
+        <main> 
+            <section class="content-container">
+                <div class="portrait">
+                    <img src="./photo/home2.jpg" alt="myphoto.jpg">
+                </div>
+                <div class="text-content">
+                    <p></p>
+                    <p>Hi, I am Qinghsi Wang! Initially from Inner Mongolia, China, I have been studying in 
+                        the US since 2024 as a master student in Materials Science and Engineering at Cornell University. 
+                        I am currently working with Professor <a href="https://jingjieyeo.github.io" style="color: cornflowerblue;">Jingjie Yeo</a> for Molecular Dynamics simulation of synthetic and 
+                        natural polymers. I am actively seeking Ph.D. positions in 2026 Fall.</p>
 
-    <main> 
-        <section class="content-container">
-            <div class="portrait">
-                <img src="./photo/home2.jpg" alt="myphoto.jpg">
+                    <p>My recent research focuses on molecular simulation on mechanical properties 
+                        of soft materials influenced by chain entanglement.
+                        To achieve the target, I have managed to build polymer models at different levels of approximations 
+                        and run simulations primarily in LAMMPS. My long-term goal is to combine molecular simulaitons with 
+                        machine learning methods to predict properties of polymer materials and discover new performance of polymers.
+                    </p>
+                </div> 
+            </section>   
+        </main> 
+
+        <div class="footer-wrapper">
+            <div class="logo-section">
+                <div class="logo-container">
+                    <a href="mailto:qw293@cornell.edu"><img src="./logo/email_new.svg" alt="email"></a>
+                    <a href="https://github.com/Qingshi1201"><img src="./logo/github.svg" alt="github"></a>
+                    <a href="https://www.linkedin.com/in/qingshi-wang-854a92323/"><img src="./logo/linkedin.svg" alt="linkedin"></a>
+                    <a href="https://orcid.org/0009-0007-5974-1566"><img src="./logo/orcid.svg" alt="orcid"></a>
+                    <a href="https://wa.me/16072793247"><img src="./logo/whatsapp.svg" alt="whatsapp"></a>
+                    <a href="./contact/wechat.jpg"><img src="./logo/wechat.svg" alt="wechat"></a>
+                </div>
             </div>
-            <div class="text-content">
-                <p></p>
-                <p>Hi, I am Qinghsi Wang! Initially from Inner Mongolia, China, I have been studying in 
-                    the US since 2024 as a master student in Materials Science and Engineering at Cornell University. 
-                    I am currently working with Professor <a href="https://jingjieyeo.github.io" style="color: cornflowerblue;">Jingjie Yeo</a> for Molecular Dynamics simulation of synthetic and 
-                    natural polymers. I am actively seeking Ph.D. positions in 2026 Fall.</p>
-
-                <p>My recent research focuses on molecular simulation on mechanical properties 
-                    of soft materials influenced by chain entanglement.
-                    To achieve the target, I have managed to build polymer models at different levels of approximations 
-                    and run simulations primarily in LAMMPS. My long-term goal is to combine molecular simulaitons with 
-                    machine learning methods to predict properties of polymer materials and discover new performance of polymers.
-                </p>
-            </div> 
-        </section>   
-    </main> 
-
-    <div class="footer-wrapper">
-        <div class="logo-section">
-            <div class="logo-container">
-                <a href="mailto:qw293@cornell.edu"><img src="./logo/email_new.svg" alt="email"></a>
-                <a href="https://github.com/Qingshi1201"><img src="./logo/github.svg" alt="github"></a>
-                <a href="https://www.linkedin.com/in/qingshi-wang-854a92323/"><img src="./logo/linkedin.svg" alt="linkedin"></a>
-                <a href="https://orcid.org/0009-0007-5974-1566"><img src="./logo/orcid.svg" alt="orcid"></a>
-                <a href="https://wa.me/16072793247"><img src="./logo/whatsapp.svg" alt="whatsapp"></a>
-                <a href="./contact/wechat.jpg"><img src="./logo/wechat.svg" alt="wechat"></a>
-            </div>
+        
+            <footer> 
+                <p>&copy; All rights reserved by Qingshi Wang.</p> 
+            </footer>
         </div>
-    
-        <footer> 
-            <p>&copy; All rights reserved by Qingshi Wang.</p> 
-        </footer>
     </div>
 </body> 
 </html>
